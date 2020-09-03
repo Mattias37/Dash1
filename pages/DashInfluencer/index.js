@@ -4,8 +4,13 @@ import utilStyles from '../../styles/utils.module.css'
 import { getSortedPostsData } from '../../lib/posts'
 import Link from 'next/link'
 import Date from '../../components/date'
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Chart from './Chart';
 
-export default function Home({ allPostsData }) {
+
+
+export default function Dashboard({ allPostsData }) {
   return (
     <Layout home>
       <Head>
@@ -20,6 +25,12 @@ export default function Home({ allPostsData }) {
             <a>Dash Influencer</a>
           </Link>
         </p>
+        {/* Chart */}
+        <Grid item xs={12} md={8} lg={9}>
+          <Paper className={utilStyles.chartStyle} >
+            <Chart  />
+          </Paper>
+        </Grid>
 
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>

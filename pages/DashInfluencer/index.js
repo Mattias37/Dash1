@@ -1,11 +1,21 @@
+
+import clsx from 'clsx';
 import Head from 'next/head'
 import Layout, { siteTitle } from '../../components/layout'
 import utilStyles from '../../styles/utils.module.css'
 import { getSortedPostsData } from '../../lib/posts'
 import Link from 'next/link'
+
+import Typography from '@material-ui/core/Typography';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import Date from '../../components/date'
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import Badge from '@material-ui/core/Badge';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 import Chart from './Chart';
 
 
@@ -16,6 +26,26 @@ export default function Dashboard({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <AppBar position="absolute" >
+        <Toolbar >
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+
+          >
+          <MenuIcon />
+          </IconButton>
+          <Typography component="h1" variant="h6" color="inherit" noWrap >
+            Dash Influencer
+          </Typography>
+          <IconButton color="inherit">
+            <Badge badgeContent={4} color="secondary">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
       <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
         <p>

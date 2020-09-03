@@ -9,16 +9,32 @@ import Link from 'next/link'
 import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Date from '../../components/date'
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Badge from '@material-ui/core/Badge';
+import Container from '@material-ui/core/Container';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Chart from './Chart';
+import Chart1 from './Chart1';
+import Deposits from './Deposits';
+import Orders from './Orders';
+import Orders1 from './Orders1';
 
-
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Dash Influencer 2020
+      </Link>{' '}
+      {'.'}
+    </Typography>
+  );
+}
 
 export default function Dashboard({ allPostsData }) {
   return (
@@ -26,7 +42,7 @@ export default function Dashboard({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <AppBar position="absolute" >
+      <AppBar  >
         <Toolbar >
           <IconButton
             edge="start"
@@ -63,6 +79,45 @@ export default function Dashboard({ allPostsData }) {
         </Grid>
 
       </section>
+
+      <Container maxWidth="lg" >
+        <Grid container spacing={3}>
+          {/* Chart */}
+          <Grid item xs={12} md={8} lg={9}>
+            <Paper className={utilStyles.chartStyle} >
+              <Chart />
+            </Paper>
+          </Grid>
+          {/* Recent Deposits */}
+          <Grid item xs={12} md={4} lg={3}>
+            <Paper className={utilStyles.chartStyle}>
+              <Deposits />
+            </Paper>
+          </Grid>
+          {/* Recent Orders */}
+          <Grid item xs={12}>
+            <Paper className={utilStyles.chartStyle}>
+              <Orders />
+            </Paper>
+          </Grid>
+          {/* Recent Orders */}
+          <Grid item xs={6}>
+            <Paper className={utilStyles.chartStyle}>
+              <Orders1 />
+            </Paper>
+          </Grid>
+          {/* Chart */}
+          <Grid item xs={6} md={6} lg={6}>
+            <Paper className={utilStyles.chartStyle}>
+              <Chart1 />
+            </Paper>
+          </Grid>
+        </Grid>
+        <Box pt={4}>
+          <Copyright />
+        </Box>
+      </Container>
+
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>

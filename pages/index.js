@@ -16,6 +16,9 @@ export default function Home({ allPostsData }) {
         <p>
           (This is a sample website - you’ll be building a site like this in{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          <Link href="/dashinfluencer" >
+            <a>Dash Influencer</a>
+          </Link>
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -26,6 +29,7 @@ export default function Home({ allPostsData }) {
               <Link href="/posts/[id]" as={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
+
               <br />
               <small className={utilStyles.lightText}>
                 <Date dateString={date} />

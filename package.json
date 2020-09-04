@@ -10,6 +10,10 @@
   "dependencies": {
     "date-fns": "^2.11.1",
     "gray-matter": "^4.0.2",
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
+    "recharts": "latest",
+    "prop-types": "latest",
     "next": "9.3.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",

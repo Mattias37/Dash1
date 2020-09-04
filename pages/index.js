@@ -34,28 +34,28 @@ export default function Home({ allPostsData }) {
                       <h3>Impulsa tu Marca</h3>
                       <p>Estrategias Personalizadas</p>
                   </header>
-                  <Link href="/landing"><a className="link primary"></a></Link>
+                  <Link href="/dashinfluencer"><a className="link primary"></a></Link>
               </article>
               <article  style={{backgroundImage: `url('https://source.unsplash.com/random')`}}>
                   <header className={utilStyles.major}>
                       <h3>Conviértete en Micro Influenciador</h3>
                       <p>Alcanza tus objetivos</p>
                   </header>
-                  <Link href="/landing"><a className="link primary"></a></Link>
+                  <Link href="/dashinfluencer"><a className="link primary"></a></Link>
               </article>
               <article  style={{backgroundImage: `url('https://source.unsplash.com/random')`}}>
                   <header className={utilStyles.major}>
                       <h3>Quienes somos...</h3>
                       <p>Marca (dash) influence</p>
                   </header>
-                  <Link href="/landing"><a className="link primary"></a></Link>
+                  <Link href="/dashinfluencer"><a className="link primary"></a></Link>
               </article>
               <article  style={{backgroundImage: `url('https://source.unsplash.com/random')`}}>
                   <header className={utilStyles.major}>
                       <h3>Nuestros logros</h3>
                       <p>Dejanos sorpenderte...</p>
                   </header>
-                  <Link href="/landing"><a className="link primary"></a></Link>
+                  <Link href="/dashinfluencer"><a className="link primary"></a></Link>
               </article>
           </section>
           <section id="two">
@@ -80,23 +80,7 @@ export default function Home({ allPostsData }) {
           </Link>
         </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} `}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href="/posts/[id]" as={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
+      
     </Layout>
   )
 }

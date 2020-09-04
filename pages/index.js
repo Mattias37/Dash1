@@ -11,6 +11,65 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <div className={utilStyles.banner}>
+      <section  className={utilStyles.major}>
+          <div className={utilStyles.inner}>
+              <header className={utilStyles.major}>
+                  <h1>Dash</h1>
+                  <p>Micro Influence Network</p>
+                  <ul className="actions">
+                      <li><a href="#one" className={utilStyles.button}>Conoce más...</a></li>
+                  </ul>
+              </header>
+              <div className={utilStyles.content}>
+
+              </div>
+          </div>
+      </section>
+      </div>
+      <div id="main">
+          <section id="one" className={utilStyles.tiles}>
+              <article  style={{backgroundImage: `url('https://source.unsplash.com/random')`}}>
+                  <header className={utilStyles.major}>
+                      <h3>Impulsa tu Marca</h3>
+                      <p>Estrategias Personalizadas</p>
+                  </header>
+                  <Link href="/landing"><a className="link primary"></a></Link>
+              </article>
+              <article  style={{backgroundImage: `url('https://source.unsplash.com/random')`}}>
+                  <header className={utilStyles.major}>
+                      <h3>Conviértete en Micro Influenciador</h3>
+                      <p>Alcanza tus objetivos</p>
+                  </header>
+                  <Link href="/landing"><a className="link primary"></a></Link>
+              </article>
+              <article  style={{backgroundImage: `url('https://source.unsplash.com/random')`}}>
+                  <header className={utilStyles.major}>
+                      <h3>Quienes somos...</h3>
+                      <p>Marca (dash) influence</p>
+                  </header>
+                  <Link href="/landing"><a className="link primary"></a></Link>
+              </article>
+              <article  style={{backgroundImage: `url('https://source.unsplash.com/random')`}}>
+                  <header className={utilStyles.major}>
+                      <h3>Nuestros logros</h3>
+                      <p>Dejanos sorpenderte...</p>
+                  </header>
+                  <Link href="/landing"><a className="link primary"></a></Link>
+              </article>
+          </section>
+          <section id="two">
+              <div className="inner">
+                  <header className="major">
+                      <h2>¿Como funciona?</h2>
+                  </header>
+                  <p>Sea que que sea lo que estes necesitando sabemos que puedes generar grandes logros ya sea convirtiendote un verdadero influencer del siglo 21 o mejorar la influencia de tu marca... Son dos metas que envuelven a muchos de nosotros. Y Dash esta aqui para ayudarte a conseguirlos!</p>
+                  <ul className="actions">
+                      <li><Link href="/landing"><a className="button next">Toma tus primeros pasos...</a></Link></li>
+                  </ul>
+              </div>
+          </section>
+      </div>
       <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
         <p>
@@ -21,7 +80,7 @@ export default function Home({ allPostsData }) {
           </Link>
         </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} `}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
